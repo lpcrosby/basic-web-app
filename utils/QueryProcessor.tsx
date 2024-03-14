@@ -30,13 +30,11 @@ export default function QueryProcessor(query: string): string {
   }
 
   if (query.toLowerCase().includes("plus")) {
-    let words: string[] = query.split(" ");
+    let words: string[] = query.split("%20");
     let num : number = 0;
-    console.log(words);
     for(var word in words)
     { 
         if(!isNaN(parseInt(word))){
-          console.log(word);
           num = num + parseInt(word);
         }
     }
