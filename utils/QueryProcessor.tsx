@@ -29,8 +29,18 @@ export default function QueryProcessor(query: string): string {
     return (String(num));
   }
 
-  if (query.toLowerCase().includes("What is 5 plus 8?")) {
-    return ("13");
+  if (query.toLowerCase().includes("plus")) {
+    let words: string[] = query.split(" ");
+    let num : number = 0;
+    console.log(words);
+    for(var word in words)
+    { 
+        if(!isNaN(parseInt(word))){
+          console.log(word);
+          num = num + parseInt(word);
+        }
+    }
+    return (String(num));
   }
 
   return "";
