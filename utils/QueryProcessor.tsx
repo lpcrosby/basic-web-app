@@ -47,7 +47,7 @@ export default function QueryProcessor(query: string): string {
     for(var word in words)
     { 
         if(!isNaN(parseInt(word))){
-          num = num + parseInt(word);
+          num.push(parseInt(word))
         }
     }
     return (String(num));
