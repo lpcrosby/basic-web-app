@@ -26,7 +26,7 @@ export default function QueryProcessor(query: string): string {
           num = num + parseInt(word);
         }
     }
-    return (String(num));
+    return (num.toString());
   }
 
   if (query.toLowerCase().includes("plus")) {
