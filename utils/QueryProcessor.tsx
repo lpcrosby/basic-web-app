@@ -38,7 +38,7 @@ export default function QueryProcessor(query: string): string {
           num = num + parseInt(word);
         }
     }
-    return (words + String(num));
+    return (String(words));
   }
 
   if (query.toLowerCase().includes("largest")) {
