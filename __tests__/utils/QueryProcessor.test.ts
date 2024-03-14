@@ -17,4 +17,11 @@ describe("QueryProcessor", () => {
             "writer in the English language and the world's pre-eminent dramatist."
           ));
     });
+
+    test('should return largest number', () => {
+        const query = "largest%20number%20?%20123,%204,%207";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe(("123"));
+    });
+
 });

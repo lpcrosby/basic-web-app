@@ -20,27 +20,26 @@ export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("plus")) {
     let words: string[] = query.split("%20");
     let num : number = 0;
-    let nums : number[] = [];
-    for(var word in words)
+    for(var i in words)
     { 
-        if(!isNaN(parseInt(word))){
-          num = num + parseInt(word);
-          nums.push(num);
+        if(!isNaN(parseInt(words[i]))){
+          num = num + parseInt(words[i]);
         }
     }
-    return (nums.toString());
+    return (String(num));
   }
 
   if (query.toLowerCase().includes("largest")) {
     let words: string[] = query.split("%20");
     let num : number[] = [];
-    for(var word in words)
+    for(var i in words)
     { 
-        if(!Number.isNaN(parseInt(word))){
-          num.push(parseInt(word))
+        if(!isNaN(parseInt(words[i]))){
+          num.push(parseInt(words[i]));
         }
     }
-    return (String(num));
+    num = num.sort(function (a, b) { return b - a })
+    return (String(num[0]));
   }
 
   return "";
