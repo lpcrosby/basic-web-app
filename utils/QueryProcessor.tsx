@@ -38,6 +38,18 @@ export default function QueryProcessor(query: string): string {
           num = num + parseInt(word);
         }
     }
+    return (words + String(num));
+  }
+
+  if (query.toLowerCase().includes("largest")) {
+    let words: string[] = query.split("%20");
+    let num : number[] = [];
+    for(var word in words)
+    { 
+        if(!isNaN(parseInt(word))){
+          num = num + parseInt(word);
+        }
+    }
     return (String(num));
   }
 
