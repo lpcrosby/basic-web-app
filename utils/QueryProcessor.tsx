@@ -1,4 +1,6 @@
 export default function QueryProcessor(query: string): string {
+  const re = /[(%20)?+:,| ]+/
+
   if (query.toLowerCase().includes("shakespeare")) {
     return (
       "William Shakespeare (26 April 1564 - 23 April 1616) was an " +
@@ -18,7 +20,8 @@ export default function QueryProcessor(query: string): string {
   }
 
   if (query.toLowerCase().includes("plus")) {
-    let words: string[] = query.split("%20");
+
+    let words: string[] = query.split(re);
     let num : number = 0;
     for(var i in words)
     { 
@@ -30,7 +33,7 @@ export default function QueryProcessor(query: string): string {
   }
 
   if (query.toLowerCase().includes("largest")) {
-    let words: string[] = query.split("%20");
+    let words: string[] = query.split(re);
     let num : number[] = [];
     for(var i in words)
     { 
