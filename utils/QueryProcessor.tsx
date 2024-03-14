@@ -36,7 +36,7 @@ export default function QueryProcessor(query: string): string {
     let num : number[] = [];
     for(var word in words)
     { 
-        if(!isNaN(parseInt(word))){
+        if(!Number.isNaN(parseInt(word))){
           num.push(parseInt(word))
         }
     }
