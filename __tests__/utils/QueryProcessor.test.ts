@@ -24,4 +24,10 @@ describe("QueryProcessor", () => {
         expect(response).toBe(("123"));
     });
 
+    test('should return correct sum of ints', () => {
+        const query = "8 plus 100";
+        const response: string = QueryProcessor(query);
+        expect(response).toBe(("108"));
+    });
+
 });
