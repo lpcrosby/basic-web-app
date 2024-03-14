@@ -1,5 +1,5 @@
 export default function QueryProcessor(query: string): string {
-  const re = /(?:[ +]+|%20)/
+  const re = /(?:[ +,]+|%20)/
 
   if (query.toLowerCase().includes("shakespeare")) {
     return (
