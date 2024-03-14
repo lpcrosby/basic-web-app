@@ -20,13 +20,15 @@ export default function QueryProcessor(query: string): string {
   if (query.toLowerCase().includes("plus")) {
     let words: string[] = query.split("%20");
     let num : number = 0;
+    let nums : number[] = [];
     for(var word in words)
     { 
         if(!isNaN(parseInt(word))){
           num = num + parseInt(word);
+          nums.push(num);
         }
     }
-    return (words.toString());
+    return (nums.toString());
   }
 
   if (query.toLowerCase().includes("largest")) {
