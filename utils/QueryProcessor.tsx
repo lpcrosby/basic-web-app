@@ -18,18 +18,6 @@ export default function QueryProcessor(query: string): string {
   }
 
   if (query.toLowerCase().includes("plus")) {
-    let words: string[] = query.split(" ");
-    let num : number = 0;
-    for(var word in words)
-    { 
-        if(!isNaN(parseInt(word))){
-          num = num + parseInt(word);
-        }
-    }
-    return (num.toString());
-  }
-
-  if (query.toLowerCase().includes("plus")) {
     let words: string[] = query.split("%20");
     let num : number = 0;
     for(var word in words)
@@ -38,7 +26,7 @@ export default function QueryProcessor(query: string): string {
           num = num + parseInt(word);
         }
     }
-    return (String(words));
+    return (words.toString());
   }
 
   if (query.toLowerCase().includes("largest")) {
